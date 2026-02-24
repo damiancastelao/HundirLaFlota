@@ -50,6 +50,7 @@ L --> M[Fin]
 - Identificar entidades (Clases) y sus estados (Atributos).
 - Comprender la comunicación entre objetos mediante el Diagrama de Secuencia.
 - Implementar lógica de negocio encapsulada.
+- [Guía](Guia.md) sobre objetos en python
 
 #### 1. Modelado y Abstracción 
 En lugar de ver números en una matriz, definir:
