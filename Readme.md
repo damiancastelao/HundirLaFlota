@@ -1,4 +1,4 @@
-# Actividad: Hundimiento a la Flota en Python
+# Primera Actividad: Hundimiento a la Flota en Python
 
 ## Parte 1: Programación Estructurada (Repaso)
 En esta fase, adaptamos el ejercicio original a Python, mejorando la legibilidad y utilizando funciones con parámetros claros.
