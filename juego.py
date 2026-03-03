@@ -1,27 +1,36 @@
 # Clase principal que gestiona el juego
+from obsoletos.objetos import Juego
+from tablero import Tablero
+
 class Juego:
     def __init__(self):
         """
         Constructor de la clase Juego.
         Inicializa el tablero y las naves del juego.
         """
-        pass
+        self.lanzar_ataque(3,2)
+
 
     def inicializar_naves(self):
         """
         Crea e inicializa todas las naves del juego.
         Coloca las naves en el tablero en posiciones predefinidas.
         """
-        pass
+
     
-    def mostrar_resultado(self, resultado):
+    def mostrar_resultado(self, resultado: int):
         """
         Muestra por pantalla el resultado de un disparo.
 
         Args:
             resultado (str): Resultado del disparo ("Agua", "Tocado", "Hundido")
         """
-        pass
+        if resultado == 0:
+            print("Agua")
+        elif resultado == 1:
+            print("Tocado")
+        elif resultado == 2:
+            print("Hundido")
 
     def lanzar_ataque(self, x, y):
         """
@@ -32,4 +41,12 @@ class Juego:
             x (int): Coordenada X del disparo
             y (int): Coordenada Y del disparo
         """
-        pass
+        print(f"Atacando a  {x}, {y} ")
+        obj_tablero = Tablero()
+        resultado = obj_tablero.comprobar_impacto(x,y)
+        self.mostrar_resultado(resultado)
+
+
+if __name__ == "__main__":
+        Juego()
+

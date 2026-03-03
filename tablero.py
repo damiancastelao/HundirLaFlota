@@ -1,5 +1,6 @@
 # Clase que representa el tablero del juego
 class Tablero:
+
     def __init__(self, tamano=10):
         """
         Constructor de la clase Tablero.
@@ -9,7 +10,9 @@ class Tablero:
         Args:
             tamano (int): Dimensión del tablero (por defecto 10x10)
         """
-        pass
+        self.AGUA = 0
+        self.TOCADO = 1
+        self.HUNDIDO = 2
 
     def colocar_nave(self, nave, x, y, orientacion):
         """
@@ -42,4 +45,5 @@ class Tablero:
         Returns:
             str: Resultado del disparo ("Agua", "Tocado", "Hundido")
         """
-        return ""
+        print("[LOG] estoy en tablero comprobando impacto")
+        return self.AGUA
