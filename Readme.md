@@ -20,7 +20,9 @@ Realiza un programa que recorra un tablero de 10x10. El programa debe identifica
   - `queNavioEs(valor)`: Devuelve el nombre del barco como String.
   - `salidaPorPantalla(coord_x, coord_y, nombre)`: Imprime el resultado.
 
-#### Diagrama de Flujo (Lógica de Recorrido)
+<details>
+<summary>📊 Diagrama de Flujo (Lógica de Recorrido)</summary>
+
 ```mermaid
 graph TD
 A[Inicio: recorrerTablero] --> B[Total = 0]
@@ -39,6 +41,8 @@ K --> C
 C -- No --> L[Retornar Total]
 L --> M[Fin]
 ```
+
+</details>
 
 ---
 
