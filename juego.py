@@ -1,38 +1,22 @@
 from tablero import Tablero
 from nave import Nave
 
-
 class Juego:
     def __init__(self):
-        """
-        Constructor de la clase Juego.
-        Inicializa el tablero y las naves del juego.
-        """
-        pass
+        self.tablero = Tablero()
 
     def inicializar_naves(self):
-        """
-        Crea e inicializa todas las naves del juego.
-        Coloca las naves en el tablero en posiciones predefinidas.
-        """
-        pass
-
-    def mostrar_resultado(self, resultado):
-        """
-        Muestra por pantalla el resultado de un disparo.
-
-        Args:
-            resultado (str): Resultado del disparo ("Agua", "Tocado", "Hundido")
-        """
-        pass
+        n1 = Nave("Acorazado", 4)
+        n2 = Nave("Destructor", 3)
+        self.tablero.colocar_nave(n1, 0, 0, True)
+        self.tablero.colocar_nave(n2, 2, 2, False)
 
     def lanzar_ataque(self, x, y):
-        """
-        Ejecuta un disparo en las coordenadas indicadas.
-        Si impacta una nave y su vida llega a cero, muestra mensaje de hundimiento.
+        return self.tablero.comprobar_impacto(x, y)
 
-        Args:
-            x (int): Coordenada X del disparo
-            y (int): Coordenada Y del disparo
-        """
-        pass
+    def mostrar_resultado(self, resultado):
+        estado, nombre = resultado
+        if estado == "Hundido":
+            print(f"¡Hundido! Has destruido el {nombre}")
+        else:
+            print(estado)
