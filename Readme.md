@@ -91,7 +91,8 @@ sequenceDiagram
     Tablero-->>Juego: return resultado
     deactivate Tablero
     
-    Juego-->>Usuario: mostrar_resultado(resultado)
+    Juego->>Juego: mostrar_resultado(resultado)
+    Juego-->>Usuario: imprime resultado
     deactivate Juego
 ```
 
