@@ -12,4 +12,4 @@ class Tablero:
 
     def comprobar_impacto(self, x ,y):
         print("(LOG) estoy en tablero comprobando el impacto")
-        return self.AGUA
+        return self.TOCADO
