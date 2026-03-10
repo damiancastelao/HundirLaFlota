@@ -1,5 +1,3 @@
-from tablero import Tablero
-
 class Nave:
     def __init__(self, nombre, tipo, vida):
         self.nombre = nombre
