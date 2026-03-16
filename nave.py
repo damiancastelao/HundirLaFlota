@@ -9,7 +9,9 @@ class Nave:
             tipo (str): Nombre del barco (submarino, fragata, portaaviones)
             vida (int): Tamaño de la nave (número de casillas que ocupa)
         """
-        pass
+        self.nombre = nombre
+        self.tipo = tipo
+        self.vida = vida
 
     def recibir_disparo(self):
         """

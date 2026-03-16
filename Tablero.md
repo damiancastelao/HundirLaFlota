@@ -113,16 +113,17 @@ for fila in range(10):
 
 # 2. Definir las naves por separado (4 submarinos, 3 fragatas, 1 portaaviones)
 # Estos objetos se definen una sola vez.
-portaaviones = Nave("Enterprise", "portaaviones", 5)
+# vamos a usar un nombre de objeto de cuatro letras, para equipararlo a None, que es el valor de las casillas vacías.
+por1 = Nave("Enterprise", "portaaviones", 5)
 
-fragata_1 = Nave("Bismarck", "fragata", 3)
-fragata_2 = Nave("Prince of Wales", "fragata", 3)
-fragata_3 = Nave("Graf Spee", "fragata", 3)
+fra1 = Nave("Bismarck", "fragata", 3)
+fra2 = Nave("Prince of Wales", "fragata", 3)
+fra3 = Nave("Graf Spee", "fragata", 3)
 
-sub_1 = Nave("U-47", "submarino", 1)
-sub_2 = Nave("U-96", "submarino", 1)
-sub_3 = Nave("U-505", "submarino", 1)
-sub_4 = Nave("U-534", "submarino", 1)
+sub1 = Nave("U-47", "submarino", 1)
+sub2 = Nave("U-96", "submarino", 1)
+sub3 = Nave("U-505", "submarino", 1)
+sub4 = Nave("U-534", "submarino", 1)
 
 # 3. Ejemplo de cómo asignar una nave a las coordenadas
 # El mismo objeto 'portaaviones' se asigna a varias posiciones.

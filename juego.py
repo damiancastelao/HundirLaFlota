@@ -8,7 +8,9 @@ class Juego:
         Constructor de la clase Juego.
         Inicializa el tablero y las naves del juego.
         """
-        self.lanzar_ataque(3,2)
+        self.lanzar_ataque(1,1)
+        self.lanzar_ataque(4,0)
+        self.lanzar_ataque(7,6)
 
 
     def inicializar_naves(self):
