@@ -1,8 +1,9 @@
 class Nave:
-    def __init__(self, nombre, tamano):
+    def __init__(self, nombre, tipo, vida):
         self.nombre = nombre
-        self.vida = tamano
+        self.tipo = tipo
+        self.vida = vida
+
 
     def recibir_disparo(self):
-        self.vida -= 1
-        return "Hundido" if self.vida == 0 else "tocado"
+        pass
