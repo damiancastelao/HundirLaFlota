@@ -1,14 +1,17 @@
+from obsoletos.objetos import Juego
 from tablero import Tablero
-from nave import Nave
 
 class Juego:
     def __init__(self):
-        self.lanzar_ataque(3, 2)
+        self.obj_tablero = Tablero()
+        self.lanzar_ataque(7, 1)
+        self.lanzar_ataque(7, 2)
+        self.lanzar_ataque(7, 3)
 
     def inicializar_naves(self):
         pass
 
-    def mostrar_resultado(self, resultado):
+    def mostrar_resultado(self, resultado: int):
         if resultado == 0:
             print("Agua")
         elif resultado == 1:
@@ -17,10 +20,10 @@ class Juego:
             print("Hundido")
 
     def lanzar_ataque(self, x, y):
-        print(f"Atacando a {x}, {y}")
-        obj_tablero = Tablero()
-        resultado = obj_tablero.comprobar_impacto(x, y)
+        print(f"Atacando a  {x}, {y} ")
+        resultado = self.obj_tablero.comprobar_impacto(x, y)
         self.mostrar_resultado(resultado)
 
+
 if __name__ == "__main__":
-        Juego()
+    Juego()

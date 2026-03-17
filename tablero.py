@@ -1,12 +1,51 @@
+from nave import Nave
+
 class Tablero:
-    def __init__(self):
+    def __init__(self, tamano=10):
+        self.nave = None
+        self.tamano = 10
+
         self.AGUA = 0
         self.TOCADO = 1
         self.HUNDIDO = 2
 
-    def colocar_nave(self, nave, fila, columna, horizontal=True):
+        por1 = Nave("Enterprise", "portaaviones", 5)
+
+        fra1 = Nave("Bismarck", "fragata", 3)
+        fra2 = Nave("Prince of Wales", "fragata", 3)
+        fra3 = Nave("Graf Spee", "fragata", 3)
+
+        sub1 = Nave("U-47", "submarino", 1)
+        sub2 = Nave("U-96", "submarino", 1)
+        sub3 = Nave("U-505", "submarino", 1)
+        sub4 = Nave("U-534", "submarino", 1)
+
+        self.casillero = [
+            [None, None, None, None, None, None, None, None, None, None],
+            [None, por1, por1, por1, por1, por1, None, None, None, None],
+            [None, None, None, None, None, None, None, None, None, None],
+            [None, None, None, fra1, None, None, None, None, None, None],
+            [None, None, None, fra1, None, None, sub1, None, None, None],
+            [None, None, None, fra1, None, None, None, None, None, None],
+            [None, None, None, None, None, None, None, None, None, None],
+            [None, fra2, fra2, fra2, None, None, sub3, None, None, None],
+            [None, None, None, None, None, None, None, None, None, None],
+            [None, fra3, fra3, fra3, None, sub4, None, None, None, sub2]
+        ]
+
+    def colocar_nave(self, nave, x, y, orientacion):
         pass
 
-    def comprobar_impacto(self, fila, columna):
-        print("[LOG] estoy en tablero comprobando impacto")
-        return self.AGUA
+    def comprobar_impacto(self, x, y):
+        print(f"[LOG] estoy en tablero comprobando impacto ({x}, {y})")
+        if self.casillero[x][y] is None:
+            print("[LOG] Agua")
+            return self.AGUA
+        else:
+            self.casillero[x][y].recibir_disparo()
+            if self.casillero[x][y].vida == 0:
+                print(f"[LOG] {self.casillero[x][y].nombre} Hundido")
+                return self.HUNDIDO
+            else:
+                print(f"[LOG] {self.casillero[x][y].nombre} Tocado")
+                return self.TOCADO
