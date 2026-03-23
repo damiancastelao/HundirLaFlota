@@ -1,5 +1,5 @@
 class Casilla:
-    def __init_(self):
+    def __init__(self):
         self.nave = None
         self.visitada = False
 
@@ -14,4 +14,10 @@ class Casilla:
             print("Agua")
             return 0
 
-        return self.nave.recibir_disparo()
+        else:
+            resultado = self.nave.recibir_disparo()
+            if resultado == 2:
+                print(f"{self.nave.nombre} Hundido")
+            else:
+                print(f"{self.nave.nombre} Tocado")
+            return resultado

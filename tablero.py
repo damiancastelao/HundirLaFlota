@@ -1,10 +1,10 @@
 from nave import Nave
+from casilla import Casilla
 
 class Tablero:
     def __init__(self, tamano=10):
-        self.nave = None
         self.tamano = 10
-
+        self.visitadas = [[False for _ in range(self.tamano)] for _ in range(self.tamano)]
         self.AGUA = 0
         self.TOCADO = 1
         self.HUNDIDO = 2
@@ -38,14 +38,23 @@ class Tablero:
 
     def comprobar_impacto(self, x, y):
         print(f"[LOG] estoy en tablero comprobando impacto ({x}, {y})")
-        if self.casillero[x][y] is None:
+
+        if self.visitadas[x][y]:
+            print("[LOG] Ya has disparado a esta casilla")
+            return None
+
+        self.visitadas[x][y] = True
+
+        casilla = self.casillero[x][y]
+
+        if casilla is None:
             print("[LOG] Agua")
             return self.AGUA
         else:
-            self.casillero[x][y].recibir_disparo()
-            if self.casillero[x][y].vida == 0:
-                print(f"[LOG] {self.casillero[x][y].nombre} Hundido")
+            resultado = casilla.recibir_disparo()
+            if resultado == 2:
+                print(f"[LOG] {casilla.nombre} Hundido")
                 return self.HUNDIDO
             else:
-                print(f"[LOG] {self.casillero[x][y].nombre} Tocado")
+                print(f"[LOG] {casilla.nombre} Tocado")
                 return self.TOCADO
