@@ -9,6 +9,9 @@ class Juego:
         self.lanzar_ataque(1, 5)
 
 
+
+
+
     def mostrar_resultado(self, resultado):
         if resultado == 0:
             print("Agua")
