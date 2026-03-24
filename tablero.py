@@ -1,5 +1,6 @@
 
 from casilla import *
+#s
 
 class Tablero:
     def __init__(self, tamanho=10):
