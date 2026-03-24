@@ -1,18 +1,17 @@
-from nave import Nave
 
+from casilla import *
 
 class Tablero:
     def __init__(self, tamanho=10):
-        # self.tamanho = tamanho
 
         self.AGUA = 0
         self.TOCADO = 1
         self.HUNDIDO = 2
-        # Creamos una nave de ejemplo
-        por1 = Nave("Destructor", "portaaviones", 5)
-        fra1 = Nave("Bismarck", "fragata", 3)
-        fra2 = Nave("Prince of Wales", "fragata", 3)
-        fra3 = Nave("Graf Spee", "fragata", 3)
+
+        por1 = Nave("Manuel", "portaaviones", 5)
+        fra1 = Nave("Damián", "fragata", 3)
+        fra2 = Nave("Elena", "fragata", 3)
+        fra3 = Nave("Noelia", "fragata", 3)
 
         sub1 = Nave("U-47", "submarino", 1)
         sub2 = Nave("U-96", "submarino", 1)
@@ -20,23 +19,15 @@ class Tablero:
         sub4 = Nave("U-534", "submarino", 1)
 
         self.casillero = [
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, por1, por1, por1, por1, por1, None, None, None, None],
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, None, None, fra1, None, None, None, None, None, None],
-            [None, None, None, fra1, None, None, sub1, None, None, None],
-            [None, None, None, fra1, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, fra2, fra2, fra2, None, None, sub3, None, None, None],
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, fra3, fra3, fra3, None, sub4, None, None, None, sub2]
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(por1), Casilla(por1), Casilla(por1), Casilla(por1), Casilla(por1), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(fra1), Casilla(fra1), Casilla(fra1), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla(sub1), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(fra2), Casilla(fra2), Casilla(fra2), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(fra3), Casilla(fra3), Casilla(fra3), Casilla('agua'), Casilla('agua'), Casilla(sub3), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla(sub4), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla(sub2)]
         ]
-
-    def comprobar_impacto(self, x, y):
-        print("Estoy comprobando el impacto")
-        nave = self.casillero[x][y]
-        if nave is None:
-            return self.AGUA
-        else:
-            return nave.recibir_disparo()
 
